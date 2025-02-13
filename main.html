@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="apoyo.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                Brandon Rosero
+                <div class="contact-info">
+                    <p>📞 +57 310 333 33 33</p>
+                    <p>📧 brandon@mail.com</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- About me-->
+    <section id="about">
+        <h2>About me</h2>
+        <div class="profile">
+            <img src="perfil.jpg" alt="Imagen de perfil">
+            <div class="profile-text">
+                <h3>Hi! I'm Brandon Rosero, nice to meet you!!!</h3>
+                <p>I am a professional with experience in AI. My goal is to contribute with my skills and learn from challenging projects. I focus on Deep Learning, Computer Vision, and Control Systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">
+                <img src="HTMLOGO.png" alt="HTML">
+                <h3>HTML</h3>
+                <p>5 years experience</p>
+            </div>
+            <div class="skill">
+                <img src="csslogo.png" alt="CSS">
+                <h3>CSS</h3>
+                <p>4 years experience</p>
+            </div>
+            <div class="skill">
+                <img src="JavaScriptlogo.png" alt="JavaScript">
+                <h3>JavaScript</h3>
+                <p>3 years experience</p>
+            </div>
+            <div class="skill">
+                <img src="python.jpg" alt="Python">
+                <h3>Python</h3>
+                <p>2 years experience</p>
+            </div>
+            <div class="skill">
+                <img src="php.png" alt="PHP">
+                <h3>PHP</h3>
+                <p>2 years experience</p>
+            </div>
+            <div class="skill">
+                <img src="java.png" alt="Java">
+                <h3>Java</h3>
+                <p>2 years experience</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <h3>Intelligent Object Detection with AI</h3>
+                <p>• Development of a Deep Learning model to identify and classify objects in real-time with high accuracy.</p>
+            </div>
+            <hr> 
+            <div class="project">
+                <h3>Monitoring System with Computer Vision</h3>
+                <p>• Implementation of a security system based on cameras that detects suspicious movements and sends automatic alerts.</p>
+            </div>
+            <hr> 
+
+            <div class="project">
+                <h3>IoT Platform for Smart Cities</h3>
+                <p>• Development of a network of IoT sensors connected to the cloud to optimize traffic and energy management in urban environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+<section id="recommendations">
+    <h2>Recommendations</h2>
+    <div class="recommendations-box">
+        <div class="recommendation">
+            <p>"Brandon is an exceptional professional with a deep understanding of artificial intelligence, his ability to solve complex problems and implement innovative solutions has greatly benefited our team."</p>
+            <p><strong>- John Doe, Senior Data Scientist</strong></p>
+        </div>
+        <div class="recommendation">
+            <p>"Brandon is not only highly skilled in computer vision, but also in applying those skills to real-world problems, he has a natural talent for identifying issues, designing systems, and collaborating effectively."</p>
+            <p><strong>- Jane Smith, Project Manager</strong></p>
+        </div>
+        <div class="recommendation">
+            <p>"I've had the pleasure of working with Brandon on several IoT projects. He is an expert in sensor networks and cloud technologies, and he approaches each challenge with a creative mindset, his technical knowledge and leadership abilities make him an invaluable asset to any team, and I highly recommend him."</p>
+            <p><strong>- Michael Johnson, IoT Solutions Architect</strong></p>
+        </div>
+    </div>
+
+
+    <h3 class="recommendation-title">Add a Recommendation</h3>
+
+    <form id="recommendation-form">
+        <input type="text" id="name" placeholder="Your name (optional)">
+        <textarea id="new-recommendation" placeholder="Leave a recommendation" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="home-container">
+        <a href="#top" class="home-button"><i class="fas fa-home"></i></a>
+    </div>
+</section>
+
+
+   
+<script>
+    document.getElementById('recommendation-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const newRecommendation = document.getElementById('new-recommendation').value;
+        const name = document.getElementById('name').value || "Somebody"; 
+        const recommendationList = document.querySelector('.recommendations-box');
+        const newRecommendationItem = document.createElement('div');
+        newRecommendationItem.classList.add('recommendation');
+        newRecommendationItem.innerHTML = `<p>"${newRecommendation}"</p><p><strong>- ${name}</strong></p>`;
+        recommendationList.appendChild(newRecommendationItem);
+
+        document.getElementById('new-recommendation').value = '';
+        document.getElementById('name').value = '';
+
+        alert("Thank you for submitting a recommendation!");
+    });
+</script>
+</body>
+</html>
