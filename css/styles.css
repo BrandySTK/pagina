@@ -1,0 +1,211 @@
+/* Estilos generales */
+@font-face {
+    font-family: 'Brush Script Std';
+    src: url('../fonts/brushscriptstd.ttf') format('truetype'); /* Asegúrate de que la ruta y el formato sean correctos */
+}
+
+body {
+    font-family: 'Brush Script Std', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    overflow: hidden; /* Evita el scroll durante la animación del logo */
+}
+
+#logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeInSmoke 3s forwards, moveUp 3s 3s forwards; /* Añade un retraso de 1 segundo al movimiento hacia arriba */
+}
+
+#logo {
+    width: 350px;
+}
+
+
+@keyframes fadeInSmoke {
+    0% {
+        opacity: 0;
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        top: 50%;
+    }
+    100% {
+        top: 40%; /* Ajusta este valor para mover el logo más arriba */
+    }
+}
+
+#logo-container.move-left {
+    transform: translate(-150%, -50%);
+    transition: transform 2.5s ease-in-out;
+}
+
+#content {
+    display: none;
+    animation: fadeInContent 1s forwards;
+}
+
+#astro-image-container {
+    position: absolute;
+    top: 50%;
+    right: 200px; /* Cambiado de 20px a 40px para mover más a la derecha */
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: fadeInAstro 1s 3s forwards; /* Añade un retraso para aparecer después del logo */
+}
+
+#astro-image {
+    width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+@keyframes fadeInAstro {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: transparent;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px 0;
+}
+
+/* Crear líneas debajo de los nombres de la navbar */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+/* Aumenta el tamaño de las líneas después de que el cursor las toca */
+.navbar a:hover::before {
+    width: 100%;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: transparent;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 150px;
+    position: relative;
+    transition: transform 1s ease-in-out;
+}
+
+#home h1, #home p {
+    text-align: left;
+    margin-left: 40px;
+}
+
+p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Estilos para el video de fondo */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Contenedor de las habilidades */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea */
+    justify-content: center; /* Centra las habilidades horizontalmente */
+    gap: 20px; /* Añade espacio entre las habilidades */
+}
+
+/* Estilo de cada habilidad */
+.skill {
+    flex: 1 1 calc(25% - 20px); /* Hace que cada habilidad ocupe el 25% del contenedor menos el espacio del gap */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el tamaño total del elemento */
+    background-color: #222; /* Fondo gris oscuro */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centra el contenido de cada habilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra */
+    opacity: 0.8; /* Establece la transparencia al 80% */
+}
+
+/* Ajuste de tamaño para la imagen de cada habilidad */
+.skill img {
+    width: 80px; /* Ajusta este tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+/* Estilo del título y la experiencia de cada habilidad */
+.skill h3 {
+    margin: 10px 0 5px; /* Márgenes alrededor del título */
+    font-size: 20px; /* Ajusta el tamaño del texto */
+}
+
+.skill p {
+    margin: 0; /* Elimina márgenes alrededor del párrafo */
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    color: #bbb; /* Color gris claro */
+}
